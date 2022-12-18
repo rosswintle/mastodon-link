@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // Get URL params
+        const urlParams = new URLSearchParams(window.location.search);
+        const server = urlParams.get('server');
+        const user = urlParams.get('user');
+        console.log(server);
+        console.log(user);
+        window.location=`https://${server}/@${user}`;
+</script>
+</head>
+<body>
+
+</body>
+</html>
