@@ -11,7 +11,7 @@
     <div id="yes" style="display:none; max-width: 800px; margin: 0 auto; line-height: 1.3;">
         <p><strong>YOU USE THIS AT YOUR OWN RISK. IF YOU GET SUSPENDED OR BANNED FROM TWITTER IT'S YOUR OWN STUPID FAULT.</strong></p>
         <p>If you link to</p>
-        <p><code>https://mastodon-link.veryuseful.app/?server=[servername]&user=[username]</code></p>
+        <p><code><span id="hostname">https://example.com/</span>?server=[servername]&user=[username]</code></p>
         <p>this page will redirect to your Mastodon account in a way that Twitter does not (currently) detect.</p>
         <h2>Supported servers</h2>
         <p>This service currently only supports the following server names:</p>
@@ -49,6 +49,13 @@
             const user = urlParams.get('user');
 
             if (! server || ! user || ! instances[server]) {
+                // Get hostname from URL
+                const hostname = window.location.hostname;
+                // Get protocol from URL
+                const protocol = window.location.protocol;
+                // Set hostname in HTML
+                document.getElementById('hostname').innerHTML = `${protocol}//${hostname}/`;
+
                 Object.keys(instances).forEach((key) => {
                     document.getElementById('instances').innerHTML += `<li>${key} = ${instances[key]}</li>`;
                 });
