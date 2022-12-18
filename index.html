@@ -1,22 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="height: 100%;">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>
-        if (navigator.userAgent.match(/Twitterbot/i) === null) {
+</head>
+<body style="display: flex; align-items: center; justify-content: center; height: 100%;">
+    <h1 id="no" style="display: none; font-family: sans-serif; font-size: 14rem; text-align: center;">Bog off, Elon!</h1>
+
+    <div id="yes" style="display:none;">
+        Sorry, your server isn't supported yet.
+    </div>
+
+        <script>
+        const instances = {
+            fosstodon: 'fosstodon.org',
+            mastodon: 'mastodon.social',
+            phpc: 'phpc.social',
+        }
+
+        function redirect() {
+            if (navigator.userAgent.match(/Twitterbot/i) !== null) {
+                document.getElementById('no').style.display = 'block';
+                return;
+            }
+
             // Get URL params
             const urlParams = new URLSearchParams(window.location.search);
             const server = urlParams.get('server');
             const user = urlParams.get('user');
-            console.log(server);
-            console.log(user);
-            window.location=`https://${server}/@${user}`;
+
+            if (! server || ! user || ! instances[server]) {
+                document.getElementById('yes').style.display = 'block';
+                return;
+            }
+
+            window.location=`https://${instances[server]}/@${user}`;
         }
+
+        redirect();
     </script>
-</head>
-<body>
-    Bog off, Elon!
+
 </body>
 </html>
