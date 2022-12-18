@@ -14,10 +14,7 @@
         <p><code>https://mastodon-link.veryuseful.app/?server=[servername]&user=[username]</code></p>
         <p>this page will redirect to your Mastodon account in a way that Twitter does not (currently) detect.</p>
         <p>This service currently only supports the following server names:</p>
-        <ul>
-            <li>fosstodon = fosstodon.org</li>
-            <li>mastodon = mastodon.social</li>
-            <li>phpc = phpc.social</li>
+        <ul id="instances">
         </ul>
     </div>
 
@@ -26,6 +23,15 @@
             fosstodon: 'fosstodon.org',
             mastodon: 'mastodon.social',
             phpc: 'phpc.social',
+            mstdn: 'mstdn.social',
+            hachyderm: 'hachyderm.io',
+            wpbuilds: 'wpbuilds.social',
+            infosec: 'infosec.exchange',
+            wpsocial: 'wp-social.net',
+            green: 'mastodon.green',
+            masto: 'mas.to',
+            indieweb: 'indieweb.social',
+            wptoots: 'wptoots.social',
         }
 
         function redirect() {
@@ -40,6 +46,9 @@
             const user = urlParams.get('user');
 
             if (! server || ! user || ! instances[server]) {
+                Object.keys(instances).forEach((key) => {
+                    document.getElementById('instances').innerHTML += `<li>${key} = ${instances[key]}</li>`;
+                });
                 document.getElementById('yes').style.display = 'block';
                 return;
             }
