@@ -1,21 +1,24 @@
 <!DOCTYPE html>
-<html lang="en" style="height: 100%;">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body style="display: flex; align-items: center; justify-content: center; height: 100%;">
-    <h1 id="no" style="display: none; font-family: sans-serif; font-size: 14rem; text-align: center;">Bog off, Elon!</h1>
+<body style="display: flex; align-items: center; justify-content: center; padding-top: 40px; font-family: sans-serif; ">
+    <h1 id="no" style="display: none; font-size: 14rem; text-align: center;">Bog off, Elon!</h1>
 
-    <div id="yes" style="display:none; max-width: 800px; font-family: sans-serif; margin: 0 auto; line-height: 1.3;">
+    <div id="yes" style="display:none; max-width: 800px; margin: 0 auto; line-height: 1.3;">
         <p><strong>YOU USE THIS AT YOUR OWN RISK. IF YOU GET SUSPENDED OR BANNED FROM TWITTER IT'S YOUR OWN STUPID FAULT.</strong></p>
         <p>If you link to</p>
         <p><code>https://mastodon-link.veryuseful.app/?server=[servername]&user=[username]</code></p>
         <p>this page will redirect to your Mastodon account in a way that Twitter does not (currently) detect.</p>
+        <h2>Supported servers</h2>
         <p>This service currently only supports the following server names:</p>
         <ul id="instances">
         </ul>
+        <h2>Make your own!</h2>
+        <p>This is a single HTML file with some JavaScript. If you know how to host single page websites and want to make your own, view the source and make a copy.</p>
     </div>
 
         <script>
