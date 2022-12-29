@@ -10,4 +10,4 @@ See also:
 * [And this one](https://twitter.com/magicroundabout/status/1604541469679054849)
 * And [this](https://twitter.com/magicroundabout/status/1604547349275189252), [this](https://twitter.com/magicroundabout/status/1604552701131751424), and finally, [this](https://twitter.com/magicroundabout/status/1604577693642723328)
 
-App is at https://mastodon-link.very-useful.app/ <- instructions are here too!
+App is at https://mastodon-link.veryuseful.app/ <- instructions are here too!
